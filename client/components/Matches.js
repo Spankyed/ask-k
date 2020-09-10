@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MatchItem from '../MatchItem';
+import MatchItem from './MatchItem';
 import { Container, List, Label, Modal, Button } from 'semantic-ui-react';
 
 /**

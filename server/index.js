@@ -1,14 +1,15 @@
 'use strict';
-
 require('dotenv').config({ silent: true });
 require('isomorphic-fetch');
+const DiscoveryV1 = require('ibm-watson/discovery/v1');
 const queryString = require('query-string');
+
 const queryBuilder = require('./query-builder');
 const queryTrendBuilder = require('./query-builder-trending');
 const discoEvents = require('./disco-events');
-const WatsonDiscoverySetup = require('../lib/watson-discovery-setup');
-const DiscoveryV1 = require('ibm-watson/discovery/v1');
-const utils = require('../lib/utils');
+
+const utils = require('./lib/utils');
+const WatsonDiscoverySetup = require('./lib/watson-discovery-setup');
 
 
 /**
@@ -21,9 +22,9 @@ const DEFAULT_NAME = 'airbnb-austin-data';
 var discoveryDocs = [];
 const fs = require('fs');
 const path = require('path');
-var arrayOfFiles = fs.readdirSync('./data/airbnb/');
+var arrayOfFiles = fs.readdirSync('./server/data/airbnb/');
 arrayOfFiles.forEach(function(file) {
-  discoveryDocs.push(path.join('./data/airbnb/', file));
+  discoveryDocs.push(path.join('./server/data/airbnb/', file));
 });
 // shorten the list if we are loading - trail version of IBM Cloud 
 // is limited to 256MB application size, so use this if you get

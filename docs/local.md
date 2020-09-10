@@ -1,6 +1,6 @@
 # Run locally
 
-This document shows how to run the `watson-discovery-ui` application on your local machine.
+This document shows how to run the `ask-k` application on your local machine.
 
 ## Steps
 
@@ -13,7 +13,7 @@ This document shows how to run the `watson-discovery-ui` application on your loc
 ## 1. Clone the repo
 
 ```bash
-git clone https://github.com/IBM/watson-discovery-ui
+git clone https://github.com/IBM/ask-k
 ```
 
 ## 2. Create your Watson Discovery service
@@ -97,4 +97,4 @@ The application will be available in your browser at `http://localhost:3000`.
 
 > Note: server host can be changed as required in app.js and `PORT` can be set in the `.env` file.
 
-[![return](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/return.png)](https://github.com/IBM/watson-discovery-ui#deployment-options)
+[![return](https://raw.githubusercontent.com/IBM/pattern-utils/master/deploy-buttons/return.png)](https://github.com/IBM/ask-k#deployment-options)

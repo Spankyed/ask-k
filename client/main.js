@@ -2,20 +2,21 @@ import 'isomorphic-fetch';
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import Matches from './Matches';
-import PaginationMenu from './PaginationMenu';
-import SearchField from './SearchField';
-import EntitiesFilter from './EntitiesFilter';
-import CategoriesFilter from './CategoriesFilter';
-import ConceptsFilter from './ConceptsFilter';
-import KeywordsFilter from './KeywordsFilter';
-import EntityTypesFilter from './EntityTypesFilter';
-import TagCloudRegion from './TagCloudRegion';
-import TrendChart from './TrendChart';
-import SentimentChart from './SentimentChart';
+import Matches from './components/Matches';
+import PaginationMenu from './components/PaginationMenu';
+import SearchField from './components/SearchField';
+import EntitiesFilter from './components/EntitiesFilter';
+import CategoriesFilter from './components/CategoriesFilter';
+import ConceptsFilter from './components/ConceptsFilter';
+import KeywordsFilter from './components/KeywordsFilter';
+import EntityTypesFilter from './components/EntityTypesFilter';
+import TagCloudRegion from './components/TagCloudRegion';
+import TrendChart from './components/TrendChart';
+import SentimentChart from './components/SentimentChart';
 import { Grid, Dimmer, Button,  Menu, Dropdown, Divider,
 Loader, Accordion, Icon, Header, Statistic } from 'semantic-ui-react';
-const utils = require('../lib/utils');
+const utils = require('../server/lib/utils');
+//change
 
 /**
  * Main React object containing all objects on the web page.
