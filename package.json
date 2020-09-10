@@ -9,7 +9,7 @@
     "url": "https://github.com/IBM/ask-k.git"
   },
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "nodemon ./server/app.js",
     "start": "node --max_old_space_size=512 app.js",
     "bootstrap": "cp env.sample .env",
     "test -u": "jest -u",

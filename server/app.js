@@ -1,7 +1,7 @@
 require('dotenv').config({ silent: true });
 
-const server = require('./server');
-const app = require('./server/express');
+const server = require('.');
+const app = require('./express');
 const port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
 
 /**
