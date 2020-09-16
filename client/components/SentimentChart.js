@@ -248,12 +248,19 @@ export default class SentimentChart extends React.Component {
           <Icon name='pie chart' />
           <Header.Content>
             Sentiment Chart
-            <Header.Subheader>
+            {/* <Header.Subheader>
               Sentiment scores by percentage
-            </Header.Subheader>
+            </Header.Subheader> */}
           </Header.Content>
-        </Header>
-        <Menu compact floated={true}>
+        </Header>   
+        <div>
+          <Doughnut 
+            data={ this.getChartData() }
+            options={ options }
+          />       
+        </div>
+        <Divider clearing hidden/>
+        <Menu compact style={{marginRight: '2' + 'em'}} className="fightme">
           <Dropdown 
             item
             onChange={ this.filterTypeChange.bind(this) }
@@ -261,7 +268,7 @@ export default class SentimentChart extends React.Component {
             options={ utils.filterTypes }
           />
         </Menu>
-        <Menu className='term-menu' compact floated={true}>
+        <Menu className='term-menu' compact >
           <Dropdown 
             item
             scrolling
@@ -270,13 +277,6 @@ export default class SentimentChart extends React.Component {
             options={ this.getTermOptions() }
           />
         </Menu>
-        <Divider clearing hidden/>
-        <div>
-          <Doughnut 
-            data={ this.getChartData() }
-            options={ options }
-          />       
-        </div>
       </div>
     );
   }

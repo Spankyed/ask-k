@@ -166,22 +166,13 @@ export default class TagCloudRegion extends React.Component {
         <Header as='h2' block inverted textAlign='left'>
           <Icon name='filter' />
           <Header.Content>
-            Filter
-            <Header.Subheader>
+            Tag Cloud
+            {/* <Header.Subheader>
               By Tag Cloud
-            </Header.Subheader>
+            </Header.Subheader> */}
           </Header.Content>
         </Header>
-        <Menu compact floated='right'>
-          <Dropdown 
-            simple
-            item
-            onChange={ this.cloudTypeChange.bind(this) }
-            defaultValue={ utils.ENTITY_FILTER }
-            options={ utils.filterTypes }
-          />
-        </Menu>
-        <Divider clearing hidden/>
+
         <div>
           <TagCloud 
             tags={ this.getTagCloudItems() }
@@ -192,6 +183,16 @@ export default class TagCloudRegion extends React.Component {
             onClick={this.tagSelected.bind(this)}
           />
         </div>
+        <Divider clearing hidden/>
+        <Menu compact floated='right'>
+          <Dropdown 
+            simple
+            item
+            onChange={ this.cloudTypeChange.bind(this) }
+            defaultValue={ utils.ENTITY_FILTER }
+            options={ utils.filterTypes }
+          />
+        </Menu>
       </div>
     );
   }

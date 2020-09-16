@@ -695,5 +695,10 @@ button.ui.button.review-button {
 }
 
 .search-field-grid {
-  margin-bottom: -3rem;
+  margin-bottom: -3rem !important;
+}
+
+.fightme {
+  background: #545454 linear-gradient(transparent,rgba(0,0,0,.05)) !important;
+  color: #fff!important;
 }

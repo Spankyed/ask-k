@@ -16,7 +16,6 @@ import SentimentChart from './components/SentimentChart';
 import { Grid, Dimmer, Button,  Menu, Dropdown, Divider,
 Loader, Accordion, Icon, Header, Statistic } from 'semantic-ui-react';
 const utils = require('../server/lib/utils');
-//change
 
 /**
  * Main React object containing all objects on the web page.
@@ -83,7 +82,7 @@ class Main extends React.Component {
       // query params
       searchQuery: searchQuery || '',
       queryType: queryType || utils.QUERY_NATURAL_LANGUAGE,
-      returnPassages: returnPassages || false,
+      returnPassages: true,//returnPassages || false,
       limitResults: limitResults || false,
       sortOrder: sortOrder || utils.sortKeys[0].sortBy,
       // used by filters
@@ -437,7 +436,7 @@ class Main extends React.Component {
       limitResults,
       sortOrder
     } = this.state;
-
+    returnPassages=true
     // clear filters if this a new text search
     if (clearFilters) {
       selectedEntities.clear();
@@ -816,15 +815,14 @@ class Main extends React.Component {
                 content='clear all'
                 icon='remove'
                 onClick={this.handleClearAllFiltersClick.bind(this)}
-              />
-            ) : null}
+              /> ) : null}
             <Header as='h2' block inverted textAlign='left'>
               <Icon name='filter' />
               <Header.Content>
                 Filter
-                <Header.Subheader>
+                {/* <Header.Subheader>
                   By List
-                </Header.Subheader>
+                </Header.Subheader> */}
               </Header.Content>
             </Header>
             <Accordion styled>
@@ -891,19 +889,7 @@ class Main extends React.Component {
             <Divider/>
             <Divider hidden/>
 
-            {/* Tag Cloud Region */}
-    
-            <Grid.Row>
-              <TagCloudRegion
-                entities={entities}
-                categories={categories}
-                concepts={concepts}
-                keywords={keywords}
-                entityTypes={entityTypes}
-                tagCloudType={tagCloudType}
-                onTagItemSelected={this.tagItemSelected.bind(this)}
-              />
-            </Grid.Row>
+
             
           </Grid.Column>
 
@@ -991,7 +977,7 @@ class Main extends React.Component {
 
             {/* Trend Chart Region */}
 
-            <Grid.Row className='ttt'>
+            {/* <Grid.Row className='ttt'>
               <div className="trend-chart">
                 <TrendChart
                   trendData={trendData}
@@ -1006,8 +992,20 @@ class Main extends React.Component {
                   onGetTrendDataRequest={this.getTrendData.bind(this)}
                 />
               </div>
+            </Grid.Row> */}
+            {/* Tag Cloud Region */}
+    
+            <Grid.Row>
+              <TagCloudRegion
+                entities={entities}
+                categories={categories}
+                concepts={concepts}
+                keywords={keywords}
+                entityTypes={entityTypes}
+                tagCloudType={tagCloudType}
+                onTagItemSelected={this.tagItemSelected.bind(this)}
+              />
             </Grid.Row>
-
           </Grid.Column>
         </Grid.Row>
       </Grid>

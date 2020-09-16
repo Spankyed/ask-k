@@ -3,4 +3,7 @@ import ReactDOM from 'react-dom';
 import Main from '../../client/main';
 
 // ReactDOM is responsible for updating the DOM to match React elements
-ReactDOM.render(<Main {...window.__INITIAL_STATE__} />, document.querySelector('main'));
+ReactDOM.render(
+<Main {...window.__INITIAL_STATE__} />, 
+document.querySelector('main')
+);

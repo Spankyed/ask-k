@@ -16,9 +16,10 @@ export default class SearchField extends React.Component {
     this.state = {
       searchQuery: this.props.searchQuery || '',
       queryType: this.props.queryType || utils.QUERY_NATURAL_LANGUAGE,
-      returnPassages: this.props.returnPassages || false,
+      returnPassages: true, //this.props.returnPassages || false,
       limitResults: this.props.limitResults || false
     };
+    
   }
 
   /**
@@ -86,7 +87,7 @@ export default class SearchField extends React.Component {
           />
         </Grid.Column>
         
-        {/* <Grid.Column width={4} verticalAlign='top' textAlign='left'>
+         {/* <Grid.Column width={4} verticalAlign='top' textAlign='left'>
           <Grid.Row>
             <Checkbox 
               label='Natural Language Query' 
@@ -108,8 +109,8 @@ export default class SearchField extends React.Component {
               onChange={this.toggleCheckbox.bind(this, 'limitResults')}
             />
           </Grid.Row>
-        </Grid.Column>
-       */}
+        </Grid.Column> */}
+       
       </Grid>
     );
   }

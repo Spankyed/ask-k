@@ -102,7 +102,8 @@ export default class Matches extends React.Component {
    * the contents of the modal dialog.
    */
   getMoreButton(item) {
-    return <Modal
+    return (
+    <Modal
       trigger={ <Button className="review-button" onClick={this.buttonClicked.bind(this, item)}>more...</Button> } 
       closeIcon
       dimmer='blurring'
@@ -131,7 +132,7 @@ export default class Matches extends React.Component {
           </List.Item>
         </div>
       </Modal.Content>
-    </Modal>;
+    </Modal>);
   }
 
   /**
